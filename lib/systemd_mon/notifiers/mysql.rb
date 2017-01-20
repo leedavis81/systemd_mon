@@ -12,11 +12,6 @@ module SystemdMon::Notifiers
 
     def notify!(notification)
 
-      log notification.hostname
-      log notification.unit.name
-      log notification.unit.current_state
-      log notification.type
-
       service = notification.unit.name.split(".").first
       status = notification.unit.current_state.first
 
