@@ -18,10 +18,11 @@ module SystemdMon::Notifiers
       case notification.hostname
         when "ip-10-150-107-232"
           env = "testing"
-        when "ip-10-150-105-217"
+        when "ip-10-150-105-208"
           env = "production"
         else
-          env = "unknown"
+          # Default to production
+          env = "production"
       end
 
       output = `systemctl show #{service}`
